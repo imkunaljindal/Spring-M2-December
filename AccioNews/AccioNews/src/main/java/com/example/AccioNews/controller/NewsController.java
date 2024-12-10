@@ -1,5 +1,6 @@
 package com.example.AccioNews.controller;
 
+import com.example.AccioNews.response.NewsResponse;
 import com.example.AccioNews.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ public class NewsController {
     NewsService newsService;
 
     @GetMapping
-    public Object getNews(@RequestParam("api-key") String apiKey) {
+    public NewsResponse getNews(@RequestParam("api-key") String apiKey) {
         return newsService.getNews(apiKey);
     }
 }
