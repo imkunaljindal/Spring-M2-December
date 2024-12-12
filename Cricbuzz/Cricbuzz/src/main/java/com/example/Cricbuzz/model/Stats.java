@@ -1,5 +1,6 @@
 package com.example.Cricbuzz.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -26,6 +27,7 @@ public class Stats {
 
     @OneToOne
     @JoinColumn
+    @JsonBackReference
     Player player;
 
 }

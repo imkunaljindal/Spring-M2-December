@@ -1,5 +1,6 @@
 package com.example.Cricbuzz.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -29,8 +30,10 @@ public class Team {
     int matchesPlayed;
 
     @OneToMany(mappedBy = "team")
+    @JsonBackReference
     List<Player> players;
 
     @ManyToMany(mappedBy = "teams")
+    @JsonBackReference
     List<CricketMatch> matches;
 }
