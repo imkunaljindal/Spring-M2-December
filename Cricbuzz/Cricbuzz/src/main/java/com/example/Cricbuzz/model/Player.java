@@ -30,7 +30,7 @@ public class Player {
     @Enumerated(EnumType.STRING)
     Gender gender;
 
-    @OneToOne(mappedBy = "player")
+    @OneToOne(mappedBy = "player",cascade = CascadeType.ALL)
     @JsonManagedReference
     Stats stats;
 
