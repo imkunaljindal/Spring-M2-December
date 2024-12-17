@@ -24,6 +24,8 @@ public class Player {
 
     int age;
 
+    String email;
+
     @Enumerated(EnumType.STRING)
     Speciality speciality;
 
